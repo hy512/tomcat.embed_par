@@ -4,15 +4,32 @@
 
 <web-app>
 	<display-name>Archetype Created Web Application</display-name>
+
 	<welcome-file-list>
-		<welcome-file>index.html</welcome-file>
+		<welcome-file>/index.html</welcome-file>
 	</welcome-file-list>
+
+	<error-page>
+		<error-code>404</error-code>
+		<location>/404.html</location>
+	</error-page>
+
 	<servlet>
 		<servlet-name>index</servlet-name>
-		<class-path>me.web.servlet.Index</class-path>
+		<servlet-class>me.web.servlet.Index</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>index</servlet-name>
 		<url-pattern>/index</url-pattern>
 	</servlet-mapping>
+
+	<filter>
+		<filter-name>encoding</filter-name>
+		<filter-class>me.web.filter.Encoding</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>encoding</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
 </web-app>

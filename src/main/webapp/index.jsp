@@ -1,5 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page contentType="text/html;charset=UTF-8" 
+    language="java"  
+    pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" 
+           uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,6 +12,11 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <h1>hello</h1>
+    <%= request.getServerName() %><br />
+    <% out.println("你的 IP 地址 " + request.getRemoteAddr() + "<br />"); %>
+    <jsp:scriptlet>
+        out.println("你的 IP 地址 " + request.getRemoteAddr());
+    </jsp:scriptlet>
 </body>
 </html>

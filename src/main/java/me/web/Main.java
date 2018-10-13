@@ -26,11 +26,11 @@ public class Main {
         cat.setPort(port);
         cat.setHostname(hostname);
         cat.setBaseDir(getAbsolutePath() + "tomcat.me");
+        Context context = cat.addWebapp(contextPath, getAbsolutePath() + "src/main/webapp");
 
         Host host = cat.getHost();
         host.setAppBase(".");
 
-        Context context = cat.addWebapp(contextPath, getAbsolutePath() + "src/main/webapp");
         // context.addLifecycleListener(new Fix);
         // context.setJarScanner(new EmbededStandardJarScann);
         // cat.getDefaultWebXmlListener();
